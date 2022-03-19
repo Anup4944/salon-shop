@@ -7,6 +7,7 @@ import DropDown from "./components/DropDown";
 import InfoSection from "./components/InfoSection";
 import { InfoData } from "./data/InfoData";
 import Listing from "./components/Listing";
+import Features from "./components/Features";
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
@@ -22,6 +23,7 @@ function App() {
       <Hero slides={SliderData} />
       <InfoSection {...InfoData} />
       <Listing />
+      <Features />
     </>
   );
 }
