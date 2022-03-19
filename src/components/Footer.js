@@ -128,8 +128,7 @@ const Footer = () => {
             >
               <YouTube />
             </a>
-          </SocialIcons>
-          <SocialIcons>
+
             <a
               href="//www.google.com"
               rel="noopener noreferrer"
@@ -138,8 +137,7 @@ const Footer = () => {
               {" "}
               <Insta />
             </a>
-          </SocialIcons>
-          <SocialIcons>
+
             <a
               href="//www.google.com"
               rel="noopener noreferrer"
@@ -148,8 +146,7 @@ const Footer = () => {
               {" "}
               <FaceBook />
             </a>
-          </SocialIcons>
-          <SocialIcons>
+
             <a
               href="//www.google.com"
               rel="noopener noreferrer"
