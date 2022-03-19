@@ -5,7 +5,7 @@ import GlobalStyle from "./globalStyle";
 import { SliderData } from "./data/SliderData";
 import DropDown from "./components/DropDown";
 import InfoSection from "./components/InfoSection";
-import { InfoData } from "./data/InfoData";
+import { InfoData, InfoDataTwo } from "./data/InfoData";
 import Listing from "./components/Listing";
 import Features from "./components/Features";
 
@@ -24,6 +24,7 @@ function App() {
       <InfoSection {...InfoData} />
       <Listing />
       <Features />
+      <InfoSection {...InfoDataTwo} />
     </>
   );
 }
