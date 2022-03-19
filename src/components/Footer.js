@@ -5,14 +5,96 @@ import { Link } from "react-router-dom";
 import { IoMdArrowRoundForward } from "react-icons/io";
 import { FaInstagram, FaFacebook, FaTwitter, FaYoutube } from "react-icons/fa";
 
-const Section = styled.section``;
-const Container = styled.div``;
-const FooterTop = styled.div``;
-const Quotes = styled.div``;
-const FooterInfo = styled.div``;
-const FooterBottom = styled.div``;
-const Contact = styled.div``;
-const SocialIcons = styled.div``;
+const Section = styled.section`
+  background: #000d1a;
+  color: #fff;
+  min-height: 600px;
+  padding: 3rem calc((100vw - 1300px));
+`;
+const Container = styled.div`
+  height: 100%;
+  width: 100%;
+  padding: 2rem;
+`;
+const FooterTop = styled.div`
+  display: flex;
+  flex-direction: row;
+  padding: 4rem 0rem;
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+  }
+`;
+const Quotes = styled.div`
+  flex: 1;
+  padding: 2rem 0rem;
+
+  h3 {
+    font-size: clamp(2rem, 8vw, 5rem);
+  }
+`;
+const FooterInfo = styled.div`
+  padding: 3rem;
+  line-height: 3;
+  display: flex;
+  flex-direction: column;
+
+  a {
+    color: #fff;
+    text-decoration: none;
+  }
+
+  @media screen and (max-width: 768px) {
+    padding: 1rem 0rem;
+  }
+`;
+const FooterBottom = styled.div`
+  display: flex;
+  padding: 2rem 0rem;
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+  }
+`;
+
+const SocialIcons = styled.div`
+  display: flex;
+  width: 50%;
+
+  @media screen and (max-width: 768px) {
+    margin-bottom: 2rem;
+    width: 100%;
+  }
+`;
+
+const Icons = css`
+  font-size: clamp(1rem, 6vw, 2rem);
+  margin-right: 1.5rem;
+  color: #cd853f;
+`;
+const YouTube = styled(FaYoutube)`
+  ${Icons}
+`;
+const FaceBook = styled(FaFacebook)`
+  ${Icons}
+`;
+const Insta = styled(FaInstagram)`
+  ${Icons}
+`;
+const Twitter = styled(FaTwitter)`
+  ${Icons}
+`;
+const Contact = styled.div`
+  width: 50%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  @media screen and (max-width: 7680px) {
+    width: 100%;
+    justify-content: flex-start;
+  }
+`;
 
 const Footer = () => {
   return (
@@ -21,7 +103,7 @@ const Footer = () => {
         <FooterTop>
           <Quotes>
             <h3>
-              Let's find <br /> you dream haircut{" "}
+              Let's find <br /> your dream haircut{" "}
             </h3>
           </Quotes>
           <FooterInfo>
@@ -44,7 +126,7 @@ const Footer = () => {
               rel="noopener noreferrer"
               target="_blank"
             >
-              <FaYoutube />
+              <YouTube />
             </a>
           </SocialIcons>
           <SocialIcons>
@@ -54,7 +136,7 @@ const Footer = () => {
               target="_blank"
             >
               {" "}
-              <FaInstagram />
+              <Insta />
             </a>
           </SocialIcons>
           <SocialIcons>
@@ -64,7 +146,7 @@ const Footer = () => {
               target="_blank"
             >
               {" "}
-              <FaFacebook />
+              <FaceBook />
             </a>
           </SocialIcons>
           <SocialIcons>
@@ -73,7 +155,7 @@ const Footer = () => {
               rel="noopener noreferrer"
               target="_blank"
             >
-              <FaTwitter />
+              <Twitter />
             </a>
           </SocialIcons>
           <Contact>
