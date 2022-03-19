@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import styled from "styled-components";
+import styled from "styled-components/macro";
 import { IoMdArrowRoundForward } from "react-icons/io";
 import HomeOne from "../images/img2.jpg";
 import HomeTwo from "../images/img7.jpg";
@@ -16,7 +16,7 @@ const Conatiner = styled.div`
   padding: 2rem 1rem;
 `;
 const Heading = styled.div`
-  font-size: 5rem;
+  font-size: 3rem;
   padding: 2rem 1rem;
   margin-bottom: 40px;
 
@@ -50,14 +50,27 @@ const Image = styled.img`
   max-height: 400px;
   object-fit: cover;
 `;
-const InfoLink = styled(Link)``;
-const Arrow = styled(IoMdArrowRoundForward)``;
+const InfoLink = styled(Link)`
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #000d1a;
+  width: 140px;
+  transition: 0.3s;
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+`;
+const Arrow = styled(IoMdArrowRoundForward)`
+  margin-left: 10px;
+`;
 
 const Listing = () => {
   return (
     <Section>
       <Conatiner>
-        <Heading></Heading>
+        <Heading>Experience our new way of cutting! </Heading>
 
         <InfoRow>
           <InfoWrap>
@@ -69,7 +82,16 @@ const Listing = () => {
             </InfoLink>
           </InfoWrap>
           <InfoWrap>
-            <Image src={HomeTwo} alt="home" />
+            <Image
+              src={HomeOne}
+              alt="home"
+              css={`
+                margin-top: 120px;
+                @media screen and (max-width: 768px) {
+                  margin-top: 8px;
+                }
+              `}
+            />
             <h2>Open 7 days till 9PM</h2>
             <InfoLink to="/">
               <p>View more</p>
