@@ -74,7 +74,13 @@ const Features = () => {
       <Container>
         <Wrapper>
           <ColumnLeft>
-            <Content>
+            <Content
+              data-aos="fade-right"
+              data-aos-durations="1200"
+              data-aos-delay="300"
+              data-aos-once="true"
+              data-aos-anchor-placemnt="center bottom"
+            >
               <h1>Sunning customer Service</h1>
               <p>
                 What is Lorem Ipsum in English? The lorem ipsum is a placeholder
@@ -94,7 +100,14 @@ const Features = () => {
           </ColumnLeft>
 
           <ColumnRight>
-            <Image src={ImageNine} />
+            <Image
+              src={ImageNine}
+              data-aos="fade-left"
+              data-aos-durations="1200"
+              data-aos-delay="300"
+              data-aos-once="true"
+              data-aos-anchor-placemnt="center bottom"
+            />
           </ColumnRight>
         </Wrapper>
       </Container>

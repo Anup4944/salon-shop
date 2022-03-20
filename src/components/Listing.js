@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import styled from "styled-components/macro";
 import { IoMdArrowRoundForward } from "react-icons/io";
 import HomeOne from "../images/img2.jpg";
-import HomeTwo from "../images/img7.jpg";
 
 const Section = styled.section`
   height: 100%;
@@ -70,10 +69,22 @@ const Listing = () => {
   return (
     <Section>
       <Conatiner>
-        <Heading>Experience our new way of cutting! </Heading>
+        <Heading
+          data-aos="fade-right"
+          data-aos-durations="1000"
+          data-aos-once="true"
+          data-aos-anchor-placemnt="center bottom"
+        >
+          Experience our new way of cutting!{" "}
+        </Heading>
 
         <InfoRow>
-          <InfoWrap>
+          <InfoWrap
+            data-aos="zoom-out-up"
+            data-aos-durations="1200"
+            data-aos-once="true"
+            data-aos-anchor-placemnt="center bottom"
+          >
             <Image src={HomeOne} alt="home" />
             <h2>Good hair cut brings good vibes</h2>
             <InfoLink to="/">
@@ -81,7 +92,12 @@ const Listing = () => {
               <Arrow />
             </InfoLink>
           </InfoWrap>
-          <InfoWrap>
+          <InfoWrap
+            data-aos="zoom-out-down"
+            data-aos-once="true"
+            data-aos-durations="1200"
+            data-aos-anchor-placemnt="center bottom"
+          >
             <Image
               src={HomeOne}
               alt="home"

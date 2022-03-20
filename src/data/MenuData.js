@@ -4,8 +4,8 @@ export const menuData = [
     link: "/about",
   },
   {
-    title: "Home",
-    link: "/homes",
+    title: "Gallery",
+    link: "/gallery",
   },
   {
     title: "Pricing",
