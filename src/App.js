@@ -3,7 +3,7 @@ import Navbar from "./components/Navbar";
 import GlobalStyle from "./globalStyle";
 import DropDown from "./components/DropDown";
 import Footer from "./components/Footer";
-import { BrowserRouter as Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import Home from "./pages";
 
 function App() {
@@ -17,9 +17,9 @@ function App() {
       <GlobalStyle />
       <Navbar toggle={toggle} />
       <DropDown isOpen={isOpen} toggle={toggle} />
-      <Switch>
-        <Route exact path="/" component={Home} />
-      </Switch>
+      <Router>
+        <Route path="/" exact component={Home} />
+      </Router>
 
       <Footer />
     </>
