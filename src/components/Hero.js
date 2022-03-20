@@ -3,6 +3,7 @@ import styled, { css } from "styled-components";
 import { Button } from "./Button";
 import { IoMdArrowRoundForward } from "react-icons/io";
 import { IoArrowForward, IoArrowBack } from "react-icons/io5";
+import { motion, AnimatePresence } from "framer-motion";
 
 const HeroSection = styled.section`
   height: 100vh;
@@ -55,7 +56,7 @@ const HeroSlider = styled.div`
   }
 `;
 
-const HeroImg = styled.img`
+const HeroImg = styled(motion.img)`
   position: absolute;
   top: 0;
   left: 0;
@@ -161,36 +162,49 @@ const Hero = ({ slides }) => {
     return null;
   }
 
+  const fadeAnimation = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { duration: 0.8 } },
+    exit: { opacity: 0 },
+  };
+
   return (
     <HeroSection>
       {" "}
       <HeroWrapper>
-        {slides.map((slide, index) => {
-          return (
-            <HeroSlide key={index}>
-              {index === current && (
-                <HeroSlider>
-                  <HeroImg src={slide.images} alt={slide.alt} />
-                  <HeroContent>
-                    <h1>{slide.title} </h1>
-                    <h1>{slide.price} </h1>
-                    <Button
-                      to={slide.path}
-                      primary="true"
-                      css={`
-                        max-width: 160px;
-                      `}
-                    >
-                      {slide.label}
-                      <Arrow />
-                    </Button>
-                  </HeroContent>
-                </HeroSlider>
-              )}
-            </HeroSlide>
-          );
-        })}
-
+        <AnimatePresence>
+          {slides.map((slide, index) => {
+            return (
+              <HeroSlide key={index}>
+                {index === current && (
+                  <HeroSlider>
+                    <HeroImg
+                      src={slide.images}
+                      alt={slide.alt}
+                      initial="hidden"
+                      animate="visible"
+                      variants={fadeAnimation}
+                    />
+                    <HeroContent>
+                      <h1>{slide.title} </h1>
+                      <h1>{slide.price} </h1>
+                      <Button
+                        to={slide.path}
+                        primary="true"
+                        css={`
+                          max-width: 160px;
+                        `}
+                      >
+                        {slide.label}
+                        <Arrow />
+                      </Button>
+                    </HeroContent>
+                  </HeroSlider>
+                )}
+              </HeroSlide>
+            );
+          })}
+        </AnimatePresence>
         <SliderButtons>
           <PreviousArrow onClick={prevSlide} />
           <NextArrow onClick={nextSlide} />
