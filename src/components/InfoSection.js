@@ -14,7 +14,7 @@ const Container = styled.div`
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 800px;
 
-  @media screen and(max-width: 768px) {
+  @media screen and (max-width: 768px) {
     grid-template-columns: 1fr;
   }
 `;
