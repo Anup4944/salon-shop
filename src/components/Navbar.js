@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { menuData } from "../data/MenuData";
 import { css } from "styled-components";
 import { Button } from "./Button";
@@ -64,8 +64,38 @@ const NavBtn = styled.div`
 `;
 
 const Navbar = ({ toggle }) => {
+  const [navbar, setNavbar] = useState(false);
+
+  const location = useLocation();
+
+  const changeBackground = () => {
+    if (window.pageYOffset >= 60) {
+      setNavbar(true);
+    } else {
+      setNavbar(false);
+    }
+  };
+
+  useEffect(() => {
+    const watchScroll = () => {
+      window.addEventListener("scroll", changeBackground);
+    };
+
+    watchScroll();
+
+    return () => {
+      window.removeEventListener("scroll", changeBackground);
+    };
+  }, []);
+
+  let style = {
+    backgroundColor:
+      navbar || location.pathname !== "/" ? "#cd835F" : "transparent",
+    transition: "0.4s",
+  };
+
   return (
-    <Nav>
+    <Nav style={style}>
       <Logo to="/">Himalayan</Logo>
       <MenuBars onClick={toggle} />
       <NavMenu>
