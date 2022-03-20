@@ -186,9 +186,20 @@ const Hero = ({ slides }) => {
                       variants={fadeAnimation}
                     />
                     <HeroContent>
-                      <h1>{slide.title} </h1>
-                      <h1>{slide.price} </h1>
+                      <h1 data-aos="fade-down" data-aos-duration="600">
+                        {slide.title}{" "}
+                      </h1>
+                      <p
+                        data-aos="fade-down"
+                        data-aos-duration="600"
+                        data-aos-delay="200"
+                      >
+                        {slide.price}{" "}
+                      </p>
                       <Button
+                        data-aos="zoom-out"
+                        data-aos-duration="500"
+                        data-aos-delay="250"
                         to={slide.path}
                         primary="true"
                         css={`

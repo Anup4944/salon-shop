@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Navbar from "./components/Navbar";
 import GlobalStyle from "./globalStyle";
 import DropDown from "./components/DropDown";
@@ -9,6 +9,8 @@ import About from "./pages/About";
 import Pricing from "./pages/Pricing";
 import Contact from "./pages/Contact";
 import Homes from "./pages/Homes";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,6 +18,8 @@ function App() {
   const toggle = () => {
     setIsOpen(!isOpen);
   };
+
+  useEffect(() => [Aos.init()], []);
   return (
     <>
       <GlobalStyle />
