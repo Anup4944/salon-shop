@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useRef } from "react";
 import styled from "styled-components";
+import emailjs from "emailjs-com";
 
 const Wrapper = styled.div`
   background: #000;
@@ -88,15 +89,37 @@ const SendButton = styled.button`
 `;
 
 const ContactForm = () => {
+  const formRef = useRef();
+
+  const handleOnSubmit = (e) => {
+    e.preventDefault();
+    emailjs.sendForm(
+      emailjs
+        .sendForm(
+          "service_o1nux8u",
+          "template_tjr5m0k",
+          formRef.current,
+          "user_okjNVIUiZZzdPlrzjSyZz"
+        )
+        .then(
+          (result) => {
+            console.log(result);
+          },
+          (error) => {
+            console.log(error.text);
+          }
+        )
+    );
+  };
   return (
     <Wrapper>
-      <Form>
+      <Form ref={formRef} onSubmit={handleOnSubmit}>
         <h3> Full Name</h3>
-        <Input placeholder="YOUR FULL NAME" />
+        <Input placeholder="YOUR FULL NAME" type="text" name="user_name" />
         <h3> Email </h3>
-        <Input placeholder="YOUR EMAIL" />
+        <Input placeholder="YOUR EMAIL" type="email" name="user_email" />
         <h3>Message </h3>
-        <TextArea placeholder="YOUR MESSAGE" />
+        <TextArea placeholder="YOUR MESSAGE" type="text" name="message" />
         <SendButton>Send</SendButton>
       </Form>
     </Wrapper>
