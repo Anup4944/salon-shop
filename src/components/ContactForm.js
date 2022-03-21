@@ -12,19 +12,16 @@ const Wrapper = styled.div`
 
 const Form = styled.form`
   background: #fff;
-  height: 50%;
+  height: 70%;
   width: 50%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-`;
 
-const First = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  text-align: center;
+  h3 {
+    text-decoration: underline;
+  }
 `;
 
 const Input = styled.input`
@@ -33,15 +30,13 @@ const Input = styled.input`
   height: 50px;
   border: none;
   border-bottom: 1px solid black;
-  margin: 10px 10px;
+  margin-left: 50px;
+  margin-top: 20px;
+  margin-bottom: 10px;
   padding: 10px;
-`;
-
-const Second = styled.div`
   display: flex;
+  justify-content: center;
   align-items: center;
-  justify-content: space-between;
-  margin-top: 25px;
 `;
 
 const TextArea = styled.textarea`
@@ -63,28 +58,46 @@ const TextArea = styled.textarea`
   color: #555555;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 1em;
-  line-height: 1.4em;
+  line-height: 3em;
   padding: 5px 8px;
   transition: background-color 0.2s ease 0s;
+`;
+
+const SendButton = styled.button`
+  background: ${({ primary }) => (primary ? "#000d1a" : "#CD853F")};
+  white-space: nowrap;
+  outline: none;
+  border: none;
+  margin-top: 20px;
+  min-width: 100px;
+  max-width: 200px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: ${({ big }) => (big ? "16px 40px" : "14px 24px")};
+  color: ${({ primary }) => (primary ? "#fff" : "#000d1a")};
+  font-size: ${({ big }) => (big ? "14px" : "20px")};
+  border-radius: ${({ round }) => (round ? "50px" : "0px")};
+
+  &:hover {
+    transform: translateY(-2px);
+  }
 `;
 
 const ContactForm = () => {
   return (
     <Wrapper>
       <Form>
-        <First>
-          <h3> Full Name</h3>
-          <Input placeholder="YOUR FULL NAME" />
-        </First>
-
-        <First>
-          <h3> Email </h3>
-          <Input placeholder="YOUR EMAIL" />
-        </First>
-        <Second>
-          <h3>Message </h3>
-          <TextArea placeholder="YOUR MESSAGE" />
-        </Second>
+        <h3> Full Name</h3>
+        <Input placeholder="YOUR FULL NAME" />
+        <h3> Email </h3>
+        <Input placeholder="YOUR EMAIL" />
+        <h3>Message </h3>
+        <TextArea placeholder="YOUR MESSAGE" />
+        <SendButton>Send</SendButton>
       </Form>
     </Wrapper>
   );
