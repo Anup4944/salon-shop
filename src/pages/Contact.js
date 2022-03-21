@@ -1,8 +1,8 @@
 import React from "react";
-import Footer from "../components/Footer";
+import ContactForm from "../components/ContactForm";
 
 const Contact = () => {
-  return <Footer />;
+  return <ContactForm />;
 };
 
 export default Contact;

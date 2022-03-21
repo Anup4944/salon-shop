@@ -156,8 +156,8 @@ const Footer = () => {
             </a>
           </SocialIcons>
           <Contact>
-            <Button to="/">
-              Let's chat <IoMdArrowRoundForward />
+            <Button to="/contact">
+              Get in touch <IoMdArrowRoundForward />
             </Button>
           </Contact>
         </FooterBottom>
