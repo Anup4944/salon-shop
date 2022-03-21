@@ -114,9 +114,15 @@ const Footer = () => {
           </FooterInfo>
           <FooterInfo>
             <h4>Location</h4>
-            <Link to="/">Princess Highway </Link>
-            <Link to="/">Rockdale NSW </Link>
-            <Link to="/">Sydney </Link>
+            <Link to="/">Shop 2/541 Princes Hwy, </Link>
+            <Link to="/">Rockdale NSW 2216 </Link>
+
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3309.5043507195815!2d151.1351770152125!3d-33.95387408063277!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b12b9ff75656dfb%3A0xa1e2d89edf56e49f!2sShop%202%2F541%20Princes%20Hwy%2C%20Rockdale%20NSW%202216!5e0!3m2!1sen!2sau!4v1647825727571!5m2!1sen!2sau"
+              width="600"
+              height="450"
+              loading="lazy"
+            ></iframe>
           </FooterInfo>
         </FooterTop>
         <FooterBottom>
