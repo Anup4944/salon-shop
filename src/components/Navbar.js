@@ -5,6 +5,7 @@ import { menuData } from "../data/MenuData";
 import { css } from "styled-components";
 import { Button } from "./Button";
 import { FaBars } from "react-icons/fa";
+import Pic from "../images/logo.jpg";
 
 const Nav = styled.div`
   height: 60px;
@@ -29,6 +30,13 @@ const NavLink = css`
 const Logo = styled(Link)`
   ${NavLink}
   font-style: italic;
+
+  img {
+    height: 60px;
+    width: auto;
+    margin-top: 2px;
+    border-radius: 50%;
+  }
 `;
 
 const MenuBars = styled(FaBars)`
@@ -96,7 +104,9 @@ const Navbar = ({ toggle }) => {
 
   return (
     <Nav style={style}>
-      <Logo to="/">Himalayan</Logo>
+      <Logo to="/">
+        <img src={Pic} alt="logo" />
+      </Logo>
       <MenuBars onClick={toggle} />
       <NavMenu>
         {menuData.map((item, index) => {
