@@ -23,6 +23,12 @@ const Form = styled.form`
   h3 {
     text-decoration: underline;
   }
+
+  @media screen and (max-width: 768px) {
+    height: 100%;
+    width: 100%;
+    padding: 10px 20px;
+  }
 `;
 
 const Input = styled.input`
@@ -62,6 +68,12 @@ const TextArea = styled.textarea`
   line-height: 3em;
   padding: 5px 8px;
   transition: background-color 0.2s ease 0s;
+
+  @media screen and (max-width: 768px) {
+    width: 70%;
+    height: 40%;
+    padding: 10px 20px;
+  }
 `;
 
 const SendButton = styled.button`
